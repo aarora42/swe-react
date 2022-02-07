@@ -19,7 +19,7 @@ export default class TuitDao implements TuitDaoI {
     async updateTuit(tid: string, tuit: Tuit): Promise<any> {
         return await TuitModel.updateOne({_id: tid}, {$set: tuit});
     }
-    async findTuitsByUser(uid: string): Promise<Tuit[]> {
-        return await UserModel.findById(uid);
-    }
+    findTuitsByUser = async (uid: string): Promise<Tuit[]> =>
+        TuitModel.find({postedBy: uid});
+
 }
