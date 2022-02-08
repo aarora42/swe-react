@@ -15,5 +15,5 @@ export default class User {
     private biography: string | null = null;
     private dateOfBirth: Date | null = null;
     private joined: Date = new Date();
-    private location: Location | null = null;
+    private location: Number | null = null;
 }
